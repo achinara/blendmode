@@ -1,0 +1,27 @@
+body {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.content {
+	margin-top: 20px;
+	position: relative;
+	width: 250px;
+	height: 250px;
+}
+
+.blend {
+	height: 100%;
+	mix-blend-mode: hue;
+	user-select: none;
+}
+
+img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}

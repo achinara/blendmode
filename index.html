@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test: blendmode</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Click on the picture </h2>
+    <div class="content">
+        <img src="woman.png" alt="">
+        <div class="blend"></div>
+    </div>
+    <script type="text/javascript">
+        const el = document.querySelector('.blend');
+        const color = () => Math.floor( Math.random() * 255);
+        el.onclick = () => el.style.backgroundColor = `rgb(${color()},${color()},${color()})`;
+    </script>
+</body>
+</html>
