@@ -2,19 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Test: blendmode</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Click on the picture </h2>
-    <div class="content">
-        <img src="woman.png" alt="">
-        <div class="blend"></div>
+    <div class="root">
+        <div class="content">
+            <img src="woman.png" alt="">
+            <div class="blend"></div>
+        </div>
+        <p>Select blend mode:</p>
+        <select class="select">
+            <option selected="">normal</option>
+            <option>hue</option>
+            <option>screen</option>
+            <option>overlay</option>
+            <option>darken</option>
+            <option>lighten</option>
+            <option>color-dodge</option>
+            <option>color-burn</option>
+            <option>hard-light</option>
+            <option>soft-light</option>
+            <option>difference</option>
+            <option>exclusion</option>
+            <option>saturation</option>
+            <option>luminosity</option>
+            <option>multiply</option>
+        </select>
+        <h3>And... click on the picture </h3>
     </div>
     <script type="text/javascript">
         const el = document.querySelector('.blend');
+        const select = document.querySelector('.select');
+
         const color = () => Math.floor( Math.random() * 255);
+
         el.onclick = () => el.style.backgroundColor = `rgb(${color()},${color()},${color()})`;
+        select.onchange = (event) =>el.style.mixBlendMode = `${event.target.value}`;
     </script>
 </body>
 </html>
